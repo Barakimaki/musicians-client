@@ -1,0 +1,35 @@
+@if(authService.currentUserSig()){
+<div class="nav">
+  <a class="profile" routerLink="/profile">
+
+    <img class="profile_image" [src]="authService.currentUserSig()?.avatar" alt="">
+    <div class="profile_name">
+      {{authService.currentUserSig()?.username}}
+    </div>
+  </a>
+  <hr>
+  <div class="nav-bar">
+    <ul class="nav-links">
+      <li routerLinkActive="active">
+        <a routerLink="/reviews">Обзоры</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/events">Мероприятия</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/teachers">Преподаватели</a>
+      </li>
+      <li routerLinkActive="active">
+        <a routerLink="/market">Барахолка</a>
+      </li>
+    </ul>
+
+    <ul class="exit">
+      <hr>
+      <li>
+        <a (click)="exit()">Выйти</a>
+      </li>
+    </ul>
+  </div>
+</div>
+}

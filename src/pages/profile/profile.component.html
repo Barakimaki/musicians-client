@@ -1,0 +1,16 @@
+<div class="profile">
+  <div class="user-data">
+    <h2>{{authService.currentUserSig()?.username}}</h2>
+    <div class="avatar">
+      <img [src]="authService.currentUserSig()?.avatar" alt="">
+    </div>
+    @if(isAvatarUpdate){
+    <input type="file" (change)="selectFile($event)" />
+    <button customButton (click)="upload()">Загрузить</button>
+    <button customButton (click)="addNewAvatar()">Закрыть</button>
+    }@else{
+    <button customButton (click)="addNewAvatar()">Обновить фото профиля</button>
+    }
+
+  </div>
+</div>
