@@ -1,12 +1,6 @@
 @if(authService.currentUserSig()){
 <div class="nav">
-  <a class="profile" routerLink="/profile">
-
-    <img class="profile_image" [src]="authService.currentUserSig()?.avatar" alt="">
-    <div class="profile_name">
-      {{authService.currentUserSig()?.username}}
-    </div>
-  </a>
+  <app-user [userID]="authService.currentUserSig()?.userID!"></app-user>
   <hr>
   <div class="nav-bar">
     <ul class="nav-links">

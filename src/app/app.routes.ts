@@ -7,7 +7,11 @@ export const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'events', component: ReviewsComponent, canActivate: [authGuard] },
   { path: 'market', component: ReviewsComponent, canActivate: [authGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+  {
+    path: 'profile/:userID',
+    component: ProfileComponent,
+    canActivate: [authGuard],
+  },
   { path: 'reviews', component: ReviewsComponent, canActivate: [authGuard] },
   { path: 'teachers', component: ReviewsComponent, canActivate: [authGuard] },
 ];

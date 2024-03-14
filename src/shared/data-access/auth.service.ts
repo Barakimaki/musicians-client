@@ -14,7 +14,7 @@ import {
   getDownloadURL,
 } from '@angular/fire/storage';
 import { Observable, from } from 'rxjs';
-import { UserInterface } from './user.interface';
+import { UserInterface } from './user/user.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -57,6 +57,7 @@ export class AuthService {
           email: user.email,
           username: user.displayName,
           avatar: user.photoURL,
+          userID: user.uid,
         });
       }
     });
@@ -82,5 +83,16 @@ export class AuthService {
       });
     });
     return from(promise);
+  }
+
+  getUserData(userID: string): UserInterface {
+    const promise = this.firebaseAuth;
+
+    return {
+      email: 'aaa',
+      username: 'aaa',
+      avatar: 'aaa',
+      userID: userID,
+    };
   }
 }

@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
           email: user.email!,
           username: user.displayName!,
           avatar: user.photoURL!,
+          userID: user.uid!,
         });
         // this.router.navigateByUrl('/');
       } else {
